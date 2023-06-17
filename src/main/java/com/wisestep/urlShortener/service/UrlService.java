@@ -37,7 +37,7 @@ public class UrlService {
         return urlValidator.isValid(url);
     }
 
-    public static long getTimeDifferenceInMinutes(String timeStamp) throws ParseException {
+    public long getTimeDifferenceInMinutes(String timeStamp) throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         Date savedTimeStamp = sdf.parse(timeStamp);
         Date currentTimeStamp = sdf.parse(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new java.util.Date()));
