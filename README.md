@@ -15,4 +15,6 @@ mvn clean install
 mvn spring-boot:run
 ```
 
+Generally it will run on port 8080 on your local machine. Therefore use `http://localhost:8080` to access locally
+
 
