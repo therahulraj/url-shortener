@@ -20,6 +20,20 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
         return new ResponseEntity<ErrorDetails>(errorDetails, HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(ExpiredLinkException.class)
+    public final ResponseEntity<ErrorDetails> handleExpiredLinkException(Exception ex, WebRequest request) {
+        ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(),
+                ex.getMessage());
+        return new ResponseEntity<ErrorDetails>(errorDetails, HttpStatus.GONE);
+    }
+
+    @ExceptionHandler(UrlNotFoundException.class)
+    public final ResponseEntity<ErrorDetails> handleUrlNotFoundException(Exception ex, WebRequest request) {
+        ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(),
+                ex.getMessage());
+        return new ResponseEntity<ErrorDetails>(errorDetails, HttpStatus.NOT_FOUND);
+    }
+
 
 
 
