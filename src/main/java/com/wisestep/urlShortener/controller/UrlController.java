@@ -12,6 +12,7 @@ import java.text.ParseException;
 import java.util.Map;
 
 @RestController
+@CrossOrigin(origins = "https://url-shortener-angular-app.vercel.app/")
 public class UrlController {
 
     @Autowired
